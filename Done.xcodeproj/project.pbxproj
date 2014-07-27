@@ -26,6 +26,16 @@
 		CC7598A11980B380000AA3FC /* TSPToDoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC75989F1980B380000AA3FC /* TSPToDoCell.m */; };
 		CC7598A41980B73A000AA3FC /* TSPAddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7598A31980B73A000AA3FC /* TSPAddToDoViewController.m */; };
 		CC7598A51980B73A000AA3FC /* TSPAddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7598A31980B73A000AA3FC /* TSPAddToDoViewController.m */; };
+		CCBDF4B11984B39A00B42655 /* TSPUpdateToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBDF4B01984B39A00B42655 /* TSPUpdateToDoViewController.m */; };
+		CCBDF4B21984B39A00B42655 /* TSPUpdateToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBDF4B01984B39A00B42655 /* TSPUpdateToDoViewController.m */; };
+		CCECB3181984C82D0084C93F /* button-done-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = CCECB3141984C82C0084C93F /* button-done-normal.png */; };
+		CCECB3191984C82D0084C93F /* button-done-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = CCECB3141984C82C0084C93F /* button-done-normal.png */; };
+		CCECB31A1984C82D0084C93F /* button-done-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCECB3151984C82C0084C93F /* button-done-normal@2x.png */; };
+		CCECB31B1984C82D0084C93F /* button-done-normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCECB3151984C82C0084C93F /* button-done-normal@2x.png */; };
+		CCECB31C1984C82D0084C93F /* button-done-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CCECB3161984C82D0084C93F /* button-done-selected.png */; };
+		CCECB31D1984C82D0084C93F /* button-done-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CCECB3161984C82D0084C93F /* button-done-selected.png */; };
+		CCECB31E1984C82D0084C93F /* button-done-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCECB3171984C82D0084C93F /* button-done-selected@2x.png */; };
+		CCECB31F1984C82D0084C93F /* button-done-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCECB3171984C82D0084C93F /* button-done-selected@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +73,12 @@
 		CC75989F1980B380000AA3FC /* TSPToDoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPToDoCell.m; sourceTree = "<group>"; };
 		CC7598A21980B73A000AA3FC /* TSPAddToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPAddToDoViewController.h; sourceTree = "<group>"; };
 		CC7598A31980B73A000AA3FC /* TSPAddToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPAddToDoViewController.m; sourceTree = "<group>"; };
+		CCBDF4AF1984B39A00B42655 /* TSPUpdateToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPUpdateToDoViewController.h; sourceTree = "<group>"; };
+		CCBDF4B01984B39A00B42655 /* TSPUpdateToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPUpdateToDoViewController.m; sourceTree = "<group>"; };
+		CCECB3141984C82C0084C93F /* button-done-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-normal.png"; sourceTree = "<group>"; };
+		CCECB3151984C82C0084C93F /* button-done-normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-normal@2x.png"; sourceTree = "<group>"; };
+		CCECB3161984C82D0084C93F /* button-done-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-selected.png"; sourceTree = "<group>"; };
+		CCECB3171984C82D0084C93F /* button-done-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-done-selected@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +145,14 @@
 				CC4DD9211972934F00FDBD03 /* TSPViewController.m */,
 				CC7598A21980B73A000AA3FC /* TSPAddToDoViewController.h */,
 				CC7598A31980B73A000AA3FC /* TSPAddToDoViewController.m */,
+				CCBDF4AF1984B39A00B42655 /* TSPUpdateToDoViewController.h */,
+				CCBDF4B01984B39A00B42655 /* TSPUpdateToDoViewController.m */,
 				CC75989E1980B380000AA3FC /* TSPToDoCell.h */,
 				CC75989F1980B380000AA3FC /* TSPToDoCell.m */,
+				CCECB3141984C82C0084C93F /* button-done-normal.png */,
+				CCECB3151984C82C0084C93F /* button-done-normal@2x.png */,
+				CCECB3161984C82D0084C93F /* button-done-selected.png */,
+				CCECB3171984C82D0084C93F /* button-done-selected@2x.png */,
 				CC4DD94319729A5D00FDBD03 /* Done.xcdatamodeld */,
 				CC4DD9231972934F00FDBD03 /* Images.xcassets */,
 				CC4DD9121972934F00FDBD03 /* Supporting Files */,
@@ -244,9 +266,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCECB31C1984C82D0084C93F /* button-done-selected.png in Resources */,
 				CC4DD9241972934F00FDBD03 /* Images.xcassets in Resources */,
 				CC4DD9161972934F00FDBD03 /* InfoPlist.strings in Resources */,
+				CCECB3181984C82D0084C93F /* button-done-normal.png in Resources */,
+				CCECB31A1984C82D0084C93F /* button-done-normal@2x.png in Resources */,
 				CC4DD91F1972934F00FDBD03 /* Main.storyboard in Resources */,
+				CCECB31E1984C82D0084C93F /* button-done-selected@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +280,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCECB31D1984C82D0084C93F /* button-done-selected.png in Resources */,
+				CCECB31F1984C82D0084C93F /* button-done-selected@2x.png in Resources */,
+				CCECB31B1984C82D0084C93F /* button-done-normal@2x.png in Resources */,
+				CCECB3191984C82D0084C93F /* button-done-normal.png in Resources */,
 				CC4DD9351972934F00FDBD03 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC4DD9221972934F00FDBD03 /* TSPViewController.m in Sources */,
+				CCBDF4B11984B39A00B42655 /* TSPUpdateToDoViewController.m in Sources */,
 				CC4DD91C1972934F00FDBD03 /* TSPAppDelegate.m in Sources */,
 				CC4DD9181972934F00FDBD03 /* main.m in Sources */,
 				CC4DD94519729A5D00FDBD03 /* Done.xcdatamodeld in Sources */,
@@ -279,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC4DD9371972934F00FDBD03 /* DoneTests.m in Sources */,
+				CCBDF4B21984B39A00B42655 /* TSPUpdateToDoViewController.m in Sources */,
 				CC7598A51980B73A000AA3FC /* TSPAddToDoViewController.m in Sources */,
 				CC7598A11980B380000AA3FC /* TSPToDoCell.m in Sources */,
 			);

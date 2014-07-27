@@ -12,10 +12,13 @@
 
 #import "TSPToDoCell.h"
 #import "TSPAddToDoViewController.h"
+#import "TSPUpdateToDoViewController.h"
 
 @interface TSPViewController () <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+@property (strong, nonatomic) NSIndexPath *selection;
 
 @end
 
@@ -56,6 +59,25 @@
         
         // Configure View Controller
         [vc setManagedObjectContext:self.managedObjectContext];
+        
+    } else if ([segue.identifier isEqualToString:@"updateToDoViewController"]) {
+        // Obtain Reference to View Controller
+        TSPUpdateToDoViewController *vc = (TSPUpdateToDoViewController *)[segue destinationViewController];
+        
+        // Configure View Controller
+        [vc setManagedObjectContext:self.managedObjectContext];
+        
+        if (self.selection) {
+            // Fetch Record
+            NSManagedObject *record = [self.fetchedResultsController objectAtIndexPath:self.selection];
+            
+            if (record) {
+                [vc setRecord:record];
+            }
+            
+            // Reset Selection
+            [self setSelection:nil];
+        }
     }
 }
 
@@ -80,7 +102,7 @@
             break;
         }
         case NSFetchedResultsChangeUpdate: {
-            [self configureCell:[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:(TSPToDoCell *)[self.tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
         }
         case NSFetchedResultsChangeMove: {
@@ -120,14 +142,43 @@
     // Update Cell
     [cell.nameLabel setText:[record valueForKey:@"name"]];
     [cell.doneButton setSelected:[[record valueForKey:@"done"] boolValue]];
+    
+    [cell setDidTapButtonBlock:^{
+        BOOL isDone = [[record valueForKey:@"done"] boolValue];
+        
+        // Update Record
+        [record setValue:@(!isDone) forKey:@"done"];
+    }];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return NO;
+    return YES;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSManagedObject *record = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        if (record) {
+            [self.fetchedResultsController.managedObjectContext deleteObject:record];
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark Table View Delegate Methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // Store Selection
+    [self setSelection:indexPath];
+    
+    // Perform Segue
+    [self performSegueWithIdentifier:@"updateToDoViewController" sender:self];
 }
 
 @end

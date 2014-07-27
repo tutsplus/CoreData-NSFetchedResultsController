@@ -51,7 +51,19 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    // Save Managed Object Context
+    [self saveManagedObjectContext];
     
+    /*
+    NSError *error = nil;
+    
+    if (![self.managedObjectContext save:&error]) {
+        if (error) {
+            NSLog(@"Unable to save changes.");
+            NSLog(@"%@, %@", error, error.localizedDescription);
+        }
+    }
+    */
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -63,7 +75,19 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    // Save Managed Object Context
+    [self saveManagedObjectContext];
     
+    /*
+    NSError *error = nil;
+    
+    if (![self.managedObjectContext save:&error]) {
+        if (error) {
+            NSLog(@"Unable to save changes.");
+            NSLog(@"%@, %@", error, error.localizedDescription);
+        }
+    }
+    */
 }
 
 #pragma mark -
@@ -112,6 +136,19 @@
     }
     
     return _persistentStoreCoordinator;
+}
+
+#pragma mark -
+#pragma mark Helper Methods
+- (void)saveManagedObjectContext {
+    NSError *error = nil;
+    
+    if (![self.managedObjectContext save:&error]) {
+        if (error) {
+            NSLog(@"Unable to save changes.");
+            NSLog(@"%@, %@", error, error.localizedDescription);
+        }
+    }
 }
 
 @end

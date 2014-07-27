@@ -41,7 +41,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="GyO-dT-Z9U"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button">
+                                                    <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -79,6 +79,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Rok-Ol-YaH" id="tA5-bd-7DV"/>
+                        <segue destination="Bx7-Jp-urc" kind="push" identifier="updateToDoViewController" id="hkR-TU-VlK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -110,8 +111,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PKS-an-d8y" firstAttribute="leading" secondItem="bn4-tu-5Xd" secondAttribute="leading" constant="20" id="K6F-7O-LRT"/>
+                            <constraint firstItem="PKS-an-d8y" firstAttribute="top" secondItem="rzl-cB-Uv9" secondAttribute="bottom" constant="20" id="RCq-6S-N4a"/>
                             <constraint firstAttribute="trailing" secondItem="PKS-an-d8y" secondAttribute="trailing" constant="20" id="fIk-2N-DoN"/>
-                            <constraint firstItem="PKS-an-d8y" firstAttribute="top" secondItem="rzl-cB-Uv9" secondAttribute="bottom" constant="20" id="mF1-qe-XM3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cYZ-v2-vbQ">
@@ -132,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xP5-zV-ZnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1611" y="15"/>
+            <point key="canvasLocation" x="1797" y="-347"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sFP-3b-Pk9">
@@ -157,6 +158,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lHK-fl-j8Z" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="m8y-NC-Pcr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4YV-ai-LMc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -168,7 +170,53 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AcX-h5-5Q8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1225" y="15"/>
+            <point key="canvasLocation" x="1359" y="-347"/>
+        </scene>
+        <!--Update To Do View Controller-->
+        <scene sceneID="lK6-iI-ruS">
+            <objects>
+                <viewController id="Bx7-Jp-urc" customClass="TSPUpdateToDoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ana-2A-JuP"/>
+                        <viewControllerLayoutGuide type="bottom" id="nkB-UO-PHX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BUs-MJ-Xxz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJd-US-Qk6">
+                                <rect key="frame" x="20" y="84" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NJd-US-Qk6" firstAttribute="top" secondItem="Ana-2A-JuP" secondAttribute="bottom" constant="20" id="Ec6-O0-aYR"/>
+                            <constraint firstAttribute="trailing" secondItem="NJd-US-Qk6" secondAttribute="trailing" constant="20" id="Tuz-2g-H0F"/>
+                            <constraint firstItem="NJd-US-Qk6" firstAttribute="leading" secondItem="BUs-MJ-Xxz" secondAttribute="leading" constant="20" id="agV-Bd-GQT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tcx-JB-2zC">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="c1k-Mn-jdh">
+                            <connections>
+                                <action selector="cancel:" destination="Bx7-Jp-urc" id="wiw-2W-JHe"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="g9U-iB-fVQ">
+                            <connections>
+                                <action selector="save:" destination="Bx7-Jp-urc" id="WOn-jZ-21r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="NJd-US-Qk6" id="8zp-1e-tKg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAJ-8s-Zzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797" y="376"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
